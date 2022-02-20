@@ -24,6 +24,9 @@ if (!process.env.HTTPS_DISABLED) {
     https
         .createServer(options, servingFunction)
         .listen(process.env.PORT || 3000);
+
+    console.log("https server running");
 } else {
     http.createServer(servingFunction).listen(process.env.PORT || 3000);
+    console.log("http server running");
 }
