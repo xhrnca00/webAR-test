@@ -4,11 +4,11 @@ This is the code sample of WebXR and three.js integration. Wroks on Android ARCo
 
 Running instructions:
 
-1. Download [three.js srouce code](https://github.com/mrdoob/three.js/releases/tag/r120) and place it under `three.js` subdirectory. 
-OR if you don't want to download the full source code:
-    
-    * Download [GLTFLoader.js](https://github.com/mrdoob/three.js/blob/r120/examples/jsm/loaders/GLTFLoader.js) and place it under `three.js/examples/jsm/loaders/`
-    * Download [three.module.js](https://github.com/mrdoob/three.js/blob/r120/build/three.module.js) and place it under `three.js/build/`
+1. Download [three.js srouce code](https://github.com/mrdoob/three.js/releases/tag/r120) and place it under `three.js` subdirectory.
+    OR if you don't want to download the full source code:
+
+        * Download [GLTFLoader.js](https://github.com/mrdoob/three.js/blob/r120/examples/jsm/loaders/GLTFLoader.js) and place it under `three.js/examples/jsm/loaders/`
+        * Download [three.module.js](https://github.com/mrdoob/three.js/blob/r120/build/three.module.js) and place it under `three.js/build/`
 
 2. Install `npm`
 
