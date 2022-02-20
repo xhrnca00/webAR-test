@@ -3,8 +3,8 @@ const https = require("https");
 const fs = require("fs");
 
 const options = {
-    key: fs.readFileSync("key.pem"),
-    cert: fs.readFileSync("cert.pem"),
+    // key: fs.readFileSync("key.pem"),
+    // cert: fs.readFileSync("cert.pem"),
 };
 const file = new static.Server();
 
