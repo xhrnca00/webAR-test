@@ -3,26 +3,27 @@ const https = require("https");
 const http = require("http");
 const fs = require("fs");
 
+const file = new static.Server();
+
+function servingFunction(req, res) {
+    req.addListener("end", function () {
+        try {
+            file.serve(req, res);
+        } catch (err) {
+            res.writeHead(400).write("<h1>File not found</h1>").end();
+        }
+    }).resume();
+}
+
 if (!process.env.HTTPS_DISABLED) {
     const options = {
         key: fs.readFileSync("key.pem"),
         cert: fs.readFileSync("cert.pem"),
     };
-    const file = new static.Server();
 
     https
-        .createServer(options, function (req, res) {
-            req.addListener("end", function () {
-                file.serve(req, res);
-            }).resume();
-        })
+        .createServer(options, servingFunction)
         .listen(process.env.PORT || 3000);
 } else {
-    http
-        .createServer(function (req, res) {
-            req.addListener("end", function () {
-                file.serve(req, res);
-            }).resume();
-        })
-        .listen(process.env.PORT || 3000);
+    http.createServer(servingFunction).listen(process.env.PORT || 3000);
 }
